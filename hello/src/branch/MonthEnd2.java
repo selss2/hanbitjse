@@ -11,17 +11,16 @@ import java.util.Scanner;
  * @file :MonthEnd.java
  * @story :
  */
-public class MonthEnd {
+public class MonthEnd2 {
 	/**
 	 * 월을 입력하면 말일이 몇일이 알려주는 프로그램 단, 2월은 29일로 한정함. 1~12를 벗어난 숫자를 입력하면 잘못된 입력값입니다
 	 * 라고 뜬다.
 	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int day = 0, month = 0;
+		int day = 0;
 		System.out.println("월을 입력해주세요");
-		month = scanner.nextInt();
-		switch (month) {
+		switch (scanner.nextInt()) {
 		case 1:case 3:case 5:case 7:case 8:case 10:case 12:
 			day = 31;
 			break;
@@ -35,4 +34,4 @@ public class MonthEnd {
 			System.out.println("잘못된 입력값입니다.");
 			return;		}
 		System.out.println("잘못된 입력값입니다");
-		System.out.println("" + month + "월의 말일은 " + day + "일 입니다. ");	}}
+		System.out.println("말일은 " + day + "일 입니다. ");	}}
