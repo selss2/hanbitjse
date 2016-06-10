@@ -1,7 +1,7 @@
 /**
  * 
  */
-package score;
+package practice;
 
 import java.util.Scanner;
 
