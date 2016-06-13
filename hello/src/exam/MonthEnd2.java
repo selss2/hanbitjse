@@ -36,11 +36,7 @@ public class MonthEnd2 {
 		 			day = 31;
 		 			break;
 		 		case 2:
-		 			if (year%4==0 && year%100!=0 ||year%400==0) {
-						day = 29;
-					} else {
-						day = 28;
-					}
+		 			day = (year%4==0 && year%100!=0 ||year%400==0)?29:28;
 		 			break;
 		 		case 4:case 6:case 9:case 11:
 		 			day = 30;
@@ -48,7 +44,7 @@ public class MonthEnd2 {
 		 		default:System.out.println("잘못 입력 되었습니다");
 		 			return;
 		 		}
-		 		System.out.println(year+"년"+month+"월"+day+"일");
+		 		System.out.println(year+"년\n"+month+"월\n"+day+"일\n");
 		 	}
 
 }

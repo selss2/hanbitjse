@@ -38,8 +38,7 @@ kaup = weight / (height / 100) / (height / 100);
 					result = "비만2단계";
 			}else if(kaup >= 40.0){
 					result = "비만3단계";
-}
-//double d = Double.parseDouble(String.format("%.2f", kaup)); 소수점 단위 짜르는 공식 2f에서 숫자가 소수점 자리수
-	System.out.println(name +"은 BMI지수는"+Double.parseDouble(String.format("%.2f", kaup))+"이고,"+result+"이다");
-			}
+}//double d = Double.parseDouble(String.format("%.2f", kaup)); 소수점 단위 짜르는 공식 2f에서 숫자가 소수점 자리수
+			//double d = Double.parseDouble(String.format("%.2f", kaup));
+System.out.printf("%s은 BMI 지수는 %.2f이고 %s이다",name,kaup,result);			}
 }
