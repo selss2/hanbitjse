@@ -1,7 +1,7 @@
 /**
  * 
  */
-package exam;
+package branch;
 
 import java.util.Scanner;
 

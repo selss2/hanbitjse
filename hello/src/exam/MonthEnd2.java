@@ -1,7 +1,7 @@
 /**
  * 
  */
-package branch;
+package exam;
 
 import java.util.Scanner;
 
@@ -26,29 +26,29 @@ public class MonthEnd2 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int malil=0;
+		int day=0,year=2016;
 		System.out.println("년 입력?(예)2016");
-		 		int year=2016;
+		year = scanner.nextInt();
 		 		System.out.println("월 입력?(예)2");
 		 		int month = 2;
 		 		switch (scanner.nextInt()) {
 		 		case 1:case 3:case 5:case 7:case 8:case 10:case 12:
-		 			malil = 31;
+		 			day = 31;
 		 			break;
 		 		case 2:
-		 			if(year==1){
-		 				malil = 29;
-		 			}else{
-		 				malil = 28;
-		 			}
+		 			if (year%4==0 && year%100!=0 ||year%400==0) {
+						day = 29;
+					} else {
+						day = 28;
+					}
 		 			break;
 		 		case 4:case 6:case 9:case 11:
-		 			malil = 30;
+		 			day = 30;
 		 			break;
 		 		default:System.out.println("잘못 입력 되었습니다");
 		 			return;
 		 		}
-		 		System.out.println(year+"년"+month+"월"+malil+"일");
+		 		System.out.println(year+"년"+month+"월"+day+"일");
 		 	}
-		 
-		 }
+
+}

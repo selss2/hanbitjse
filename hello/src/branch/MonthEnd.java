@@ -34,5 +34,4 @@ public class MonthEnd {
 		default:
 			System.out.println("잘못된 입력값입니다.");
 			return;		}
-		System.out.println("잘못된 입력값입니다");
 		System.out.println("" + month + "월의 말일은 " + day + "일 입니다. ");	}}

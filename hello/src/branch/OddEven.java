@@ -1,7 +1,7 @@
 /**
  * 
  */
-package exam;
+package branch;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -19,24 +19,16 @@ public class OddEven {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Random random = new Random();
-		String result = "";
+		String result = "LOSE";
 		int num = random.nextInt(10) + 1;
 		int deal = 0;
 		System.out.println("===개발자만 보는 화면===");
 		System.out.println("랜덤수는 " + num);
-		int userNum = scanner.nextInt();
 		System.out.println("돈을 거시는데 짝이라고 생각하면 0을 " + "홀이라고 생각하면 1을 입력하시오");
 		deal = scanner.nextInt();
-		if (deal%2) {
-			
-		} else {
-
-		}
-		}
-		System.out.println("WIN");
-		System.out.println("Lose");
-		{
-
-		}
+		if (deal ==  num %2) {
+			result = "WIN";
 	}
+		System.out.println(result);
+}
 }
