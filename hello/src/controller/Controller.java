@@ -17,9 +17,11 @@ public class Controller {
 		String menu = "";
 		Scanner s = new Scanner(System.in);
 		Calc calc = new Calc();
-		
+		kaup kaup = new kaup();
+
 		while (true) {
-			menu = JOptionPane.showInputDialog("1. 계산기, 2. 카우푸, 3. 년월말 구하기, 0. 종료 ");
+			menu = JOptionPane.showInputDialog("1. 계산기" + "2. 카우푸" + "3. 년월말 구하기" + "4. 1등 구하기" + "5. 학번/나이"
+					+ "6. 최고최저 점수" + "7. 세금액" + "8. 성별판별" + "9. 시분초 구하기" + "0. 종료 ");
 			switch (menu) {
 			case "1":
 				calc(s);
@@ -27,13 +29,26 @@ public class Controller {
 				System.out.print("기호를 입력하세요");
 				System.out.print("연산자 : ");
 				System.out.print("두번째숫자 : ");
-				System.out.println(calc.execute(s.nextInt(), s.next(), s.nextInt();
+				System.out.println(calc.execute(s.nextInt(), s.next(), s.nextInt()));
 				break;
 			case "2":
 				kaup(s);
+				System.out.println("이름을 입력해주세요 : ");
+				System.out.println("키를 입력해주세요 : ");
+				System.out.println("몸무게를 입력해주세요 : ");
+				System.out.println(kaup.inputkaup(s.next(), s.nextDouble(), s.nextDouble()));
 				break;
 			case "3":
 				monthend(s);
+				System.out.println("년 입력?(예)2016");
+				System.out.println("월 입력?(예)2");
+				if () {
+					System.out.println("잘못 입력 되었습니다");
+				} else {
+					System.out.printf("%d%s%d%s%d%s", year, "년", month, "월", day, "일");
+
+				}
+
 				break;
 			case "0":
 				JOptionPane.showConfirmDialog(null, "종료하시겠습니까?");
