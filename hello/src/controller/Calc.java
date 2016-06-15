@@ -10,7 +10,7 @@ package controller;
  * @story :
  */
 public class Calc {
-	public String execute(int inputNum1,String opcode, int inputNum2) {
+	public String input1(int inputNum1,String opcode, int inputNum2) {
 
 		int num1 = inputNum1;
 		int num2 = inputNum2;

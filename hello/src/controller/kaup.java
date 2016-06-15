@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 public class kaup {
-	public String inputkaup(String name, double tall, double weight){
+	public String input2(String name, double tall, double weight){
 		String result="";
 double kaup = weight / (tall / 100) / (tall / 100);
 		
