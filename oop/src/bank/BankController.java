@@ -7,6 +7,8 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import global.MyConstants;
+
 /**
  * @date :2016. 6. 15.
  * @author :오승준
@@ -41,7 +43,7 @@ public class BankController {
 				break;
 			case "5":
 				JOptionPane.showMessageDialog(null,
-						Account.BANK_NAME + "\n이름 : " + account.getName() + "\n계좌번호 :" + account.getAccount());
+						MyConstants.BANK_NAME + "\n이름 : " + account.getName() + "\n계좌번호 :" + account.getAccount());
 				break;
 			default:
 				JOptionPane.showConfirmDialog(null, "정말로 종료하시겠습니까?");

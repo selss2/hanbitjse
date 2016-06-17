@@ -20,7 +20,6 @@ public class Student {
 	private int age;
 	private String reg;
 
-	public final static String SCHOOL_NAME = "한빛 학원";
 	private String[] ds;
 
 	public Student(String id, String pw, String name, String ssn) {

@@ -18,7 +18,6 @@ public class Account {
 
 	private String pw;
 	private String id;
-	public final static String BANK_NAME = "한빛 은행";
 
 	public Account(String name) {
 		this.accountNo = (int) (Math.random() * 999999) + 100000;
