@@ -34,9 +34,6 @@ public class RPSBean {
 	public String getComp(){
 		return comp;
 	}
-	
-	
-	
 	@Override
 	public String toString() {
 		return "결과 [플레이어=" + play + ", 컴퓨터=" + comp + "]";

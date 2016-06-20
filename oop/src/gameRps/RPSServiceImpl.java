@@ -15,15 +15,22 @@ import javax.swing.JOptionPane;
  */
 public class RPSServiceImpl implements RPSService {
 	@Override
+	//String rps = JOptionPane.showInputDialog("1가위 2바위 3보자기");
+
 	public void betPlayerValue(int playerValue) {
+		if (1) {
+			1 = "가위"; 
+		} else {
+
+		}
 	}
 
 	@Override
 	public void setComputerValue() {
 		// TODO Auto-generated method stub
 		Random random = new Random();
-		int num = random.nextInt(3) + 1;
-		switch (num) {
+		int comNum = random.nextInt(3) + 1;
+		switch (comNum) {
 		case 1:
 			break;
 		case 2:
@@ -36,11 +43,12 @@ public class RPSServiceImpl implements RPSService {
 	@Override
 	public void whoWin() {
 		// TODO Auto-generated method stub
-		if (condition) {
+		if (compNum > playNum) {
 			
-		} else {
+		} else if (compNum == playNum) {
 
-		}
+		} else (compNum < playNum)
+	
 		@Override
 	public String showResult() {
 		return null;
