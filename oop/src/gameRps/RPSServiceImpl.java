@@ -18,7 +18,7 @@ public class RPSServiceImpl implements RPSService {
 	//String rps = JOptionPane.showInputDialog("1가위 2바위 3보자기");
 
 	public void betPlayerValue(int playerValue) {
-		if (1) {
+		if () {
 			1 = "가위"; 
 		} else {
 
@@ -43,12 +43,12 @@ public class RPSServiceImpl implements RPSService {
 	@Override
 	public void whoWin() {
 		// TODO Auto-generated method stub
-		if (compNum > playNum) {
+		if (compNum > playerValue){
 			
-		} else if (compNum == playNum) {
-
-		} else (compNum < playNum)
-	
+		} else if (compNum == playerValue) {
+		
+		} else (compNum < playerValue){
+	}
 		@Override
 	public String showResult() {
 		return null;
