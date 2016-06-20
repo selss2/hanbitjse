@@ -36,14 +36,12 @@ public class RPSServiceImpl implements RPSService {
 	@Override
 	public void whoWin() {
 		// TODO Auto-generated method stub
-		if (num==) {
-
+		if (condition) {
+			
 		} else {
 
 		}
-	}
-
-	@Override
+		@Override
 	public String showResult() {
 		return null;
 	}
