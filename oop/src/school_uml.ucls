@@ -15,8 +15,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="school.Student" project="oop" file="/oop/src/school/Student.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="school.StudentBean" project="oop" file="/oop/src/school/StudentBean.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="255" y="252"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

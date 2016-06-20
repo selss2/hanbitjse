@@ -5,7 +5,7 @@ package school;
 
 import javax.swing.JOptionPane;
 
-import bank.Account;
+import bank.AccountBean;
 
 /**
  * @date :2016. 6. 16.
@@ -17,16 +17,19 @@ import bank.Account;
 // 2. 조회 결과 : 홍길동, id, 성별
 public class SchoolController {
 	public static void main(String[] args) { // String[] params
-		Student student = null;
+		StudentBean student = null;
+		StudentServiceImpl studentService = new StudentServiceImpl();
 
 		while (true) {
 			switch (JOptionPane.showInputDialog("1.등록 2.조회 0.종료")) {
 			case "1":
+				stu
+				student = JOptionPane.showInputDialog(null, "ID, PW, 이름, 주민번호");
 				String id = JOptionPane.showInputDialog("ID");
 				String pw = JOptionPane.showInputDialog("PW");
 				String name = JOptionPane.showInputDialog("이름");
 				String ssn = JOptionPane.showInputDialog("주민번호 ex)000101-1");
-				student = new Student(id, pw, name, ssn);
+				student = new StudentBean(id, pw, name, ssn);
 				break;
 			case "2":
 				JOptionPane.showMessageDialog(null, student.toString());

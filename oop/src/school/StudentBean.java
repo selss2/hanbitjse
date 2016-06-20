@@ -7,7 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 
-import javax.swing.JOptionPane;
 
 /**
  * @date :2016. 6. 16.
@@ -15,42 +14,51 @@ import javax.swing.JOptionPane;
  * @file :Student.java
  * @story :
  */
-public class Student {
+public class StudentBean {
 	private String id, pw, name, regDate, gender, ssn;
 	private int age;
 	private String reg;
 
 	private String[] ds;
 
-	public Student(String id, String pw, String name, String ssn) {
-		this.name = name;
+	public StudentBean(String id, String pw, String name, String ssn) {
 		this.id = id;
 		this.pw = pw;
+		this.name = name;
 		this.ssn = ssn;
-		String now = new SimpleDateFormat("yyyy-MM-dd")
-				.format(new Date(System.currentTimeMillis()));
-		this.Reg(now);
-		setDs(now.split("-"));
-		String[] arr = ssn.split("-");
-		char c = ssn.charAt(7);
-		if (c == '0' || c == '9') {
-			JOptionPane.showMessageDialog(null, "0과 9는 입력불가");
-			return;
-		}
-		switch (c%2) {
-		case 1 : 
-			this.gender = "남성";
+		String now = new SimpleDateFormat("yyyy-MM-dd").format(new Date(System.currentTimeMillis()));
+		this.regDate = now;
+		String[] ssnArr = ssn.split("-");
+		String[] nowArr = now.split("-");
+		int ageResult1 = (Integer.parseInt(ssnArr[0]));
+		int genderResult = (Integer.parseInt(ssnArr[1]));
+		int ageResult2 = (Integer.parseInt(nowArr[0]));
+		int ageResult0 = 0;
+		switch (genderResult%2) {
+		case 1: case 5: 
+			this.gender="남"; 
+			ageResult0 = ageResult2 - 1900-(ageResult1/10000);
+			this.age = ageResult0;
+			break;
+		case 3: case 7:
+			this.gender="남"; 
+			ageResult0 = ageResult2 - 2000-(ageResult1/10000);
+			this.age = ageResult0;
+			break;
+		case 2: case 6:
+			this.gender="여";
+			ageResult0 = ageResult2 - 1900-(ageResult1/10000);
+			this.age = ageResult0;
+			break;
+		case 4: case 8:
+			this.gender="여";
+			ageResult0 = ageResult2 - 2000-(ageResult1/10000);
+			this.age = ageResult0;
 			break;
 		default:
-			this.gender = "여성";
-						break;
+			System.out.println("잘못된값이 입력됨");
 		}
-		int dage = Integer.parseInt(arr[0]);
-		age = 2016 - (dage/100000+1900);
 		}
-	private void Reg(String now) {
-		
-	}
 	public String getName() {
 		return this.name;
 	}
@@ -72,12 +80,8 @@ public class Student {
 	public String getId() {
 		return this.id;
 	}
-	public String getReg() {
-		return reg;
-	}
-	public void setDs(String[] ds) {
-		this.ds = ds;
-	}
+	public void 
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
