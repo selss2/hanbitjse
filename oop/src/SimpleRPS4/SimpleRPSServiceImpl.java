@@ -19,6 +19,8 @@ public class SimpleRPSServiceImpl implements SimpleRPSService{
 		int com = rps.getComp();
 		int ply = rps.getPlay();
 		
+		
+		
 		return result;
 	}
 

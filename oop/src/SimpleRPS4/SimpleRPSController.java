@@ -11,8 +11,11 @@ import javax.swing.JOptionPane;
  * @file   :simpleRPSController.java
  * @story  : 
  */
-
-
+//System.out.println("1부터 100까지의 값만 입력하여 주세요.");
+//return;
+//}
+//System.out.println("" + name + "님의 총점은" + total + "점이며, 평균은 " + evg + "입니다. 학점은 " + qwe);
+//}
 	public class SimpleRPSController {
 		public static void main(String[] args) {
 			JOptionPane.showMessageDialog(null, "===가위바위보 게임===");
