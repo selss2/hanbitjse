@@ -23,4 +23,15 @@ public void updateStudent(String newPw);
 // 4. 삭제
 public void deleteStudent();
 
+/**
+ * @return
+ */
+String findStudent();
+
+/**
+ * @param pw2
+ * @return
+ */
+boolean checkPassword(String pw2);
+
 }

@@ -15,80 +15,70 @@ import java.util.Date;
  * @story :
  */
 public class StudentBean {
-	private String id, pw, name, regDate, gender, ssn;
-	private int age;
-	private String reg;
-
-	private String[] ds;
-
-	public StudentBean(String id, String pw, String name, String ssn) {
+	
+	private String id;
+	private String pw;
+	private String name;
+	private String gender;
+	private String regDate;
+	private String ssn;
+	private int    age;
+	
+	public StudentBean(String name,String id,String pw,String ssn){
+		this.name = name;
 		this.id = id;
 		this.pw = pw;
-		this.name = name;
 		this.ssn = ssn;
-		String now = new SimpleDateFormat("yyyy-MM-dd").format(new Date(System.currentTimeMillis()));
-		this.regDate = now;
-		String[] ssnArr = ssn.split("-");
-		String[] nowArr = now.split("-");
-		int ageResult1 = (Integer.parseInt(ssnArr[0]));
-		int genderResult = (Integer.parseInt(ssnArr[1]));
-		int ageResult2 = (Integer.parseInt(nowArr[0]));
-		int ageResult0 = 0;
-		switch (genderResult%2) {
-		case 1: case 5: 
-			this.gender="남"; 
-			ageResult0 = ageResult2 - 1900-(ageResult1/10000);
-			this.age = ageResult0;
-			break;
-		case 3: case 7:
-			this.gender="남"; 
-			ageResult0 = ageResult2 - 2000-(ageResult1/10000);
-			this.age = ageResult0;
-			break;
-		case 2: case 6:
-			this.gender="여";
-			ageResult0 = ageResult2 - 1900-(ageResult1/10000);
-			this.age = ageResult0;
-			break;
-		case 4: case 8:
-			this.gender="여";
-			ageResult0 = ageResult2 - 2000-(ageResult1/10000);
-			this.age = ageResult0;
-			break;
-		default:
-			System.out.println("잘못된값이 입력됨");
+		
+		int sCode = Integer.parseInt(ssn.split("-")[1]);
+		this.gender = (sCode+10)%2==0 ? "여" : "남";
+		this.regDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date(System.currentTimeMillis()));
+		
+		int nowYear = Integer.parseInt(regDate.substring(0,4));
+		int birthYear = Integer.parseInt(ssn.substring(0, 2));
+		
+		switch (sCode) {
+			case 1:case 2:case 5:case 6:
+				this.age = nowYear - (1900+birthYear)+1;
+				break;
+			case 9:case 0:
+				this.age = nowYear - (1800+birthYear)+1;
+				break;
+			default:
+				this.age = nowYear - (2000+birthYear)+1;
+				break;
 		}
-		}
-	public String getName() {
-		return this.name;
+		
 	}
-	public String getRegDate() {
-		return this.regDate;
-	}
-	public String getGender() {
-		return this.gender;
-	}
-	public String getSsn() {
-		return this.ssn;
-	}
-	public int getAge() {
-		return this.age;
+	
+	public String getId() {
+		return id;
 	}
 	public String getPw() {
-		return this.pw;
+		return pw;
 	}
-	public String getId() {
-		return this.id;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
-	public void 
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "학생 [아이디=" + id + ", 비번=****, 이름=" + name + ", 등록일=" + regDate + ", 성별=" + gender
-				+ ", 주민번호=" + ssn + ", 나이=" + age + ", reg=" + reg + ", ds=" + Arrays.toString(ds) + "]";
+	public String getGender() {
+		return gender;
+	}
+	public String getRegDate() {
+		return regDate;
+	}
+	public String getSsn() {
+		return ssn;
+	}
+	public int getAge() {
+		return age;
+	}
+	public String getName() {
+		return name;
 	}
 
+	@Override
+	public String toString() {
+		return MyConstants.SCHOOL_NAME + "StudentBean [id=" + id + ", pw=" + pw + ", name=" + name + ", gender=" + gender + ", regDate=" + regDate
+				+ ", ssn=" + ssn + ", age=" + age + "]";
+	}
 }
