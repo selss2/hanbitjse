@@ -24,11 +24,15 @@ public class StudentBean {
 	private String ssn;
 	private int    age;
 	
-	public StudentBean(String name,String id,String pw,String ssn){
+	public StudentBean() {
+	}
+	
+	public StudentBean(String id, String pw,String name,String ssn){
 		this.name = name;
 		this.id = id;
 		this.pw = pw;
 		this.ssn = ssn;
+		
 		
 		int sCode = Integer.parseInt(ssn.split("-")[1]);
 		this.gender = (sCode+10)%2==0 ? "여" : "남";
@@ -78,7 +82,7 @@ public class StudentBean {
 
 	@Override
 	public String toString() {
-		return MyConstants.SCHOOL_NAME + "StudentBean [id=" + id + ", pw=" + pw + ", name=" + name + ", gender=" + gender + ", regDate=" + regDate
+		return MyConstants.SCHOOL_NAME + " [id=" + id + ", pw=" + pw + ", name=" + name + ", gender=" + gender + ", regDate=" + regDate
 				+ ", ssn=" + ssn + ", age=" + age + "]";
 	}
 }

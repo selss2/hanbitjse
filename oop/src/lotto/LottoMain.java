@@ -1,6 +1,7 @@
 package lotto;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.io.File;
 import javax.swing.JOptionPane;
 import java.io.FileWriter;
@@ -22,15 +23,16 @@ public class LottoMain {
 		service.setLottos(lot);
 		int[][] lottos = service.getLottos();
 		for (int i = 0; i < lottos.length; i++) {
-			service.sort(lottos[i]);
+		//	service.sort(lottos[i]);
+			Arrays.sort(lottos[i]);
 			for (int j = 0; j < lottos[i].length; j++) {
 				buf.append(lottos[i][j] + "\t");
 			}
 			buf.append("/");
 		}
 	System.out.println("로또\n"+buf);
-	int lottoSerialNo=(int) (Math.random()*999999+100000);
-	File output = new File("c:\\eclipse\\lotto\\"+ lottoSerialNo+".txt");
+	//int lottoSerialNo=(int) (Math.random()*999999+100000);
+	File output = new File("c:\\eclipse\\lotto.txt");
 	BufferedWriter bw=null;
 	
 	String[] myLotto = buf.toString().split("/");
